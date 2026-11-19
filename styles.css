@@ -10,15 +10,15 @@
    ===================================================================== */
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #ffffff;
-    color: #1D3557;
+   font-family: Arial, sans-serif;
+    background-color: #FFF3D6;
+    color: #3D405B;
     margin: 0;
     padding: 0 20px 40px 20px;
 
 /* the menu at the top of every page */
 nav {
-    background-color: #457B9D;
+    background-color: #E76F51;
     padding: 14px;
     text-align: center;
 }
