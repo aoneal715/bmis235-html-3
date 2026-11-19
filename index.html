@@ -36,7 +36,117 @@
      This box is empty on purpose. In Part 7 you paste an interactive
      graphic BETWEEN the opening <div> and the closing </div> below.
      ===================================================================== -->
-<div class="showcase"></div>
+<div class="showcase">
+    <!-- HTML: Three clickable cards for the dogs -->
+    <div class="showcase-title">
+        <h2>Meet Our Dogs!</h2>
+        <p>Click on a dog to learn more about them.</p>
+    </div>
+
+    <div class="showcase-cards">
+        <button class="showcase-card" data-dog="duke">
+            <span class="showcase-emoji">🐾</span>
+            <span>Duke</span>
+            <small>Our energetic Dalmatian</small>
+        </button>
+
+        <button class="showcase-card" data-dog="penelope">
+            <span class="showcase-emoji">🐶</span>
+            <span>Penelope</span>
+            <small>Our playful Goldendoodle</small>
+        </button>
+
+        <button class="showcase-card" data-dog="stella">
+            <span class="showcase-emoji">🦴</span>
+            <span>Stella</span>
+            <small>Our relaxed oldest dog</small>
+        </button>
+    </div>
+
+    <div class="showcase-info" id="dog-info">
+        Choose one of the dogs above to see more!
+    </div>
+
+    <!-- CSS: Styles only the interactive dog graphic -->
+    <style>
+        .showcase {
+            font-family: Arial, sans-serif;
+            background-color: #FFF3D6;
+            border: 3px solid #E76F51;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 25px auto;
+            max-width: 700px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .showcase .showcase-title {
+            color: #3D405B;
+            margin-bottom: 18px;
+        }
+
+        .showcase .showcase-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 12px;
+        }
+
+        .showcase .showcase-card {
+            background-color: #8ECAE6;
+            color: #3D405B;
+            border: 2px solid #E76F51;
+            border-radius: 12px;
+            padding: 15px 8px;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .showcase .showcase-card:hover {
+            background-color: #E76F51;
+            color: white;
+        }
+
+        .showcase .showcase-emoji {
+            display: block;
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .showcase .showcase-card small {
+            display: block;
+            font-size: 12px;
+            margin-top: 6px;
+        }
+
+        .showcase .showcase-info {
+            background-color: white;
+            color: #3D405B;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 18px;
+            min-height: 45px;
+        }
+    </style>
+
+    <!-- JavaScript: Shows information when a dog card is clicked -->
+    <script>
+        const dogFacts = {
+            duke: "Duke is a 2-year-old Dalmatian. He is the youngest dog in the house and has tons of energy!",
+            penelope: "Penelope is a 3-year-old Goldendoodle. She is mellow but still loves to play.",
+            stella: "Stella is 5 years old. She is the oldest dog in the house and has a relaxed personality."
+        };
+
+        document.querySelectorAll('.showcase .showcase-card').forEach(function(card) {
+            card.addEventListener('click', function() {
+                const dog = card.getAttribute('data-dog');
+                document.getElementById('dog-info').textContent = dogFacts[dog];
+            });
+        });
+    </script>
+</div>
 
 <!-- Footer: fill in your name -->
 <footer>Built by YOUR NAME &middot; BMIS 235</footer>
